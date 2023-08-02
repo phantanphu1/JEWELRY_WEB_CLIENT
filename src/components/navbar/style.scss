@@ -1,0 +1,220 @@
+.Navbar_Container {
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    z-index: 50;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+      rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  
+    .navbar_container_box {
+      width: 90%;
+      height: 100%;
+      margin-left: 5%;
+      align-items: center;
+      justify-content: space-around;
+      display: flex;
+  
+      .Navbar_Logo {
+        nav {
+          overflow: hidden;
+          height: 80px;
+          width: 100%;
+  
+          label.logo {
+            color: black;
+            font-size: 30px;
+            line-height: 80px;
+            font-weight: bold;
+          }
+        }
+      }
+  
+      .Navbar_Menu {
+        .Tab_Navbar {
+          // padding: 20px;
+          font-size: 16px;
+          text-transform: capitalize;
+  
+          &:hover {
+            color: red;
+          }
+        }
+      }
+  
+      .Navbar_Icon {
+        display: flex;
+  
+        align-items: center;
+  
+        .Button {
+          Button {
+            color: white;
+            background-color: red;
+            border-radius: 20px;
+            font-size: 14px;
+            text-transform: capitalize;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+              rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  
+            &:hover {
+              background-color: rgb(207, 10, 10);
+            }
+          }
+        }
+  
+        .Icon {
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          align-items: center;
+          gap: 5px;
+          // margin: 0px 0px 0px 20px;
+  
+          .material-icons {
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            margin: -1px 0px 0px 13px;
+            border-radius: 50%;
+            width: 45px;
+            height: 35px;
+            font-size: 30px;
+            padding-top: 8px;
+            color: rgb(236, 1, 51);
+            background-color: rgb(238, 238, 238);
+  
+            &:hover {
+              // border: 0.01px solid red;
+              box-shadow: 0 0 5px rgba(33, 33, 33, 0.2);
+              cursor: default;
+            }
+          }
+  
+          Button {
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            // height: 37px;
+            color: red;
+            background-color: #ffff;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-left: 10px;
+            text-transform: capitalize;
+            border: none;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+              rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  
+            &:hover {
+              background-color: rgb(207, 10, 10);
+              color: #ffff;
+            }
+          }
+        }
+      }
+  
+      .Notification {
+        font-size: 14px;
+        border: none;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+      }
+  
+      .Contents {
+        background-color: #f9f9f9;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        // z-index: 1;
+        margin-left: -340px;
+        width: 400px;
+        height: 400px;
+        padding: 5px 0px 0px 6px;
+        border-radius: 5px;
+        margin-top: 5px;
+  
+        span {
+          font-size: 16px;
+          font-weight: 500px;
+        }
+      }
+    }
+  }
+  
+  .Navbar_fixed {
+    position: fixed;
+    top: 0;
+    transition: all 1s;
+    animation: 1s animation 1;
+  }
+  
+  @keyframes animation {
+    0% {
+      top: -60px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  // @media(max-width:768px){
+  //   .Navbar_Container{
+  //     width: 100%;
+  //     display: flex;
+  //       flex-wrap: wrap;
+  //       justify-content: center;
+  //       align-items: center;
+  //       padding: 0;
+  //     .navbar_container_box{
+  //       width: 90%;
+  
+  //     }
+  //   }
+  // }
+  
+//   @media only screen and (max-width: 768px) {
+//     .Navbar_Container .navbar_container_box {
+//       width: 85%;
+//       margin-left: 7.5%;
+//       justify-content: space-between;
+      
+//     }
+//     // .Navbar_Container .navbar_container_box .Navbar_Menu{
+//     //   flex-direction: column;
+//     //           text-align: center;
+//     //           background-color: red;
+//     // }
+//     .Navbar_Container .navbar_container_box .Navbar_Logo nav {
+//       height: 60px;
+//       display: flex;
+//       align-items: center;
+//     }
+//     .Navbar_Container .navbar_container_box .Navbar_Logo nav label.logo {
+//       font-size: 24px;
+//       line-height: 60px;
+//     }
+//     .Navbar_Container .navbar_container_box .Navbar_Menu {
+//       // display: none;
+//       flex-direction: column;
+//               text-align: center;
+//     }
+//     .Navbar_Container .navbar_container_box .Navbar_Icon {
+//       display: flex;
+//       align-items: center;
+//     }
+//     .Navbar_Container .navbar_container_box .Navbar_Icon .Icon .material-icons {
+//       margin: 0;
+//     }
+//     .Navbar_Container .navbar_container_box .Navbar_Icon .Icon Button {
+//       // display: none;
+//     }
+//     .Navbar_Container .navbar_container_box .Contents {
+//       margin-left: 0;
+//       width: 100%;
+//       height: 100vh;
+//       position: fixed;
+//       top: 60px;
+//       left: 0;
+//       padding: 10px;
+//       overflow-y: auto;
+//     }
+//   }
+  
