@@ -37,13 +37,13 @@ import {
 //   } from "../../redux/chat_box/chatBoxSlice";
 //   import ws from "../../socket";
   import { toastify } from "../../utils/common";
-//   import {
-//     getUserDataLocalStorage,
-//     removeUserDataLocalStorage,
-//   } from "../../utils/localstorage";
+  import {
+    getUserDataLocalStorage,
+    removeUserDataLocalStorage,
+  } from "../../utils/localstorage";
 //   import logo1 from "./images/acount.jpeg";
   import "./style.scss";
-//   import NotificationItem from "./notification";
+  import NotificationItem from "./notification";
 //   import ChangePassword from "../change_password";
 //   import {
 //     addNotify,
@@ -62,13 +62,13 @@ import {
     const [anchorElNotify, setAnchorElNotify] = React.useState(null);
     const [openModalChangePassword, setOpenModalChangePassword] =
       React.useState(false);
-    // const userIdStorage = getUserDataLocalStorage();
+    const userIdStorage = getUserDataLocalStorage();
   
     // const arrayNotify = useSelector(listNotify);
     // const checkStatusNotify = useSelector(checkNotify);
   
     // const dispatch = useDispatch();
-  
+
     const open = Boolean(anchorEl);
     const openNotify = Boolean(anchorElNotify);
   
@@ -175,7 +175,7 @@ import {
                     label={
                       <Box sx={{ display: "flex", alignItems: "center" }}>
                         <LocationOnIcon />
-                        <Typography sx={{ ml: 1 }}>Bài Hát</Typography>
+                        <Typography sx={{ ml: 1 }}>Trang Sức</Typography>
                       </Box>
                     }
                     onClick={() => {
@@ -188,7 +188,7 @@ import {
                     label={
                       <Box sx={{ display: "flex", alignItems: "center" }}>
                         <ExploreOutlined />
-                        <Typography sx={{ ml: 1 }}>Playlist</Typography>
+                        <Typography sx={{ ml: 1 }}>Bộ Sưu Tập</Typography>
                       </Box>
                     }
                     onClick={() => {
@@ -213,7 +213,7 @@ import {
             </div>
   
             <div className="Navbar_Icon">
-              {/* {userIdStorage && ( */}
+              {userIdStorage && (
                 <div className="Button">
                   <Button
                     variant="contained"
@@ -234,9 +234,9 @@ import {
                      Đăng bài
                   </Button>
                 </div>
-              {/* )} */}
+               )}
               <div className="Icon">
-                {/* {userIdStorage ? ( */}
+                {userIdStorage ? (
                   <>
                     <IconButton
                       onClick={() => {
@@ -258,10 +258,10 @@ import {
                       aria-controls={openNotify ? "notify" : undefined}
                       aria-haspopup="true"
                       aria-expanded={openNotify ? "true" : undefined}
-                    //   style={{
-                    //     backgroundColor: checkStatusNotify ? "red" : " #fff",
-                    //     color: !checkStatusNotify ? "red" : "#fff",
-                    //   }}
+                      // style={{
+                      //   backgroundColor: checkStatusNotify ? "red" : " #fff",
+                      //   color: !checkStatusNotify ? "red" : "#fff",
+                      // }}
                     >
                       <NotificationsOutlinedIcon />
                     </IconButton>
@@ -277,7 +277,7 @@ import {
                         <Tooltip title="Account settings">
                           <Avatar
                             alt="Remy Sharp"
-                            // src={userIdStorage ? userIdStorage.avt : logo1}
+                            src={userIdStorage.avt}
                             onClick={handleClick}
                             sx={{
                               cursor: "pointer",
@@ -357,7 +357,7 @@ import {
                         <MenuItem
                           onClick={() => {
                             handleClose();
-                            // removeUserDataLocalStorage();
+                            removeUserDataLocalStorage();
                             // dispatch(setUser(null));
                             // dispatch(closeChatBox());
                             navigation("/home");
@@ -371,7 +371,7 @@ import {
                       </Menu>
                     </React.Fragment>
                   </>
-                {/* ) : ( */}
+               ) : ( 
                   <Button
                     id="loginButton"
                     variant="contained"
@@ -382,7 +382,7 @@ import {
                   >
                     Đăng Nhập
                   </Button>
-                {/* )} */}
+                )}
               </div>
             </div>
           </div>

@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import { Button, IconButton, InputAdornment, TextField } from "@mui/material";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import { useForm } from "react-hook-form";
 import LoadingButton from "@mui/lab/LoadingButton";
+import { IconButton, InputAdornment, TextField } from "@mui/material";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
 import "./style.scss";
 // import axiosClient from "../../../api/\baxiosClient";
-import { toastify } from "../../../utils/common";
-import Loading from "../../../components/loading/loading";
-import { useNavigate } from "react-router-dom";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-import { ToastContainer } from "react-toastify";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import { toastify } from "../../../utils/common";
+import { setUserDataLocalStorage } from "../../../utils/localstorage";
 
 const validationInput = yup.object().shape({
   identifier: yup.string().required("Vui lòng nhập email hoặc tên đăng nhập."),
@@ -70,10 +70,11 @@ const LoginForm = () => {
     axios
       .post("http://localhost:4000/api/user/login", loginData)
       .then((res) => {
-        console.log(res);
+        setUserDataLocalStorage(res.data.user._id);
         toastify("success", res.data.message || " Đăng nhập thành công !");
         reset();
         setLoadingPage(false);
+        navigation("/home");
       })
       .catch((err) => {
         console.log("Error:", err);
